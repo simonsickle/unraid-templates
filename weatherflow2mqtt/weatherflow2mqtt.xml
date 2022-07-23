@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>weatherflow2mqtt</Name>
+  <Repository>briis/weatherflow2mqtt</Repository>
+  <Registry>https://hub.docker.com/r/briis/weatherflow2mqtt</Registry>
+  <Network>host</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/briis/hass-weatherflow2mqtt/issues/</Support>
+  <Project>https://github.com/briis/hass-weatherflow2mqtt</Project>
+  <Overview>This project monitors the UDP socket (50222) from a WeatherFlow Hub, and publishes the data to a MQTT Server. Data is formatted in a way that, it supports the MQTT Discovery format for Home Assistant, so a sensor will created for each entity that WeatherFlow sends out, if you have MQTT Discovery enabled.&#xD;
+&#xD;
+Everything runs in a pre-built Docker Container, so installation is very simple. You only need Docker installed on a computer and a MQTT Server setup somewhere in your network. If you run either the Operating System or Supervised installation of Home Assistant, you will have easy access to both.&#xD;
+&#xD;
+There is support for both the AIR &amp;amp; SKY devices and the TEMPEST device.&#xD;
+&#xD;
+Please review Breaking Changes prior to updating your instance. Breaking changes will be listed in https://github.com/briis/hass-weatherflow2mqtt/blob/main/CHANGELOG.md See Breaking Changes section under  2021-12-10 for steps to updating naming conventions.</Overview>
+  <Category>HomeAutomation:</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/simonsickle/unraid-templates/main/weatherflow2mqtt/weatherflow2mqtt.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/simonsickle/unraid-templates/main/weatherflow2mqtt/logo.png</Icon>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <DonateText>If you like my work please consider Donating.</DonateText>
+  <DonateLink>https://cash.app/$ssickle</DonateLink>
+  <Requires>//mosquitto\\</Requires>
+  <Config Name="Is Tempest" Target="TEMPEST_DEVICE" Default="True" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Station ID" Target="STATION_ID" Default="" Mode="" Description="Enter your Station ID for your WeatherFlow Station. Default value is blank." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Station Token" Target="STATION_TOKEN" Default="" Mode="" Description="Enter your personal access Token to allow retrieval of data. If you don't have the token login with your account and create the token. NOTE You must own a WeatherFlow station to get this token. Default value is blank" Type="Variable" Display="always" Required="false" Mask="true"/>
+  <Config Name="MQTT Host" Target="MQTT_HOST" Default="[IP]" Mode="" Description="The IP address of your mqtt server. Even though you have the MQTT Server on the same machine as this Container, don't use 127.0.0.1 as this will resolve to an IP Address inside your container. Use the external IP Address. Default value is 127.0.0.1 (Required)" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="MQTT Port" Target="MQTT_PORT" Default="1883" Mode="" Description="The Port for your mqtt server. Default value is 1883" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="MQTT User" Target="MQTT_USERNAME" Default="" Mode="" Description="The username used to connect to the mqtt server. Leave blank to use Anonymous connection. Default value is blank" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="MQTT Password" Target="MQTT_PASSWORD" Default="" Mode="" Description="The password used to connect to the mqtt server. Leave blank to use Anonymous connection. Default value is blank" Type="Variable" Display="always" Required="false" Mask="true"/>
+  <Config Name="Retreive Forcast" Target="ADD_FORECAST" Default="False" Mode="" Description="Set this to True if you want to retrieve Forecast Data from WeatherFlow. If set to True, STATION_ID and STATION_TOKEN must be filled also. NOTE If this is enabled the component will access the Internet to get the Forecast data. Default value is False&#13;&#10;" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Forcast Fetch Interval" Target="FORECAST_INTERVAL" Default="30" Mode="" Description="The interval in minutes, between updates of the Forecast data. Default value is 30 minutes." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Unit System" Target="UNIT_SYSTEM" Default="metric" Mode="" Description="Enter imperial or metric. This will determine the unit system used when displaying the values. Default is metric" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Elevation" Target="ELEVATION" Default="0" Mode="" Description="Set the hight above sea level for where the station is placed. This is used when calculating some of the sensor values. Station elevation plus Device height above ground. The value has to be in meters (meters = feet * 0.3048). Default is 0" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="Language" Target="LANGUAGE" Default="en" Mode="" Description="Currently these languages are supported for Wind Cardinals and other Text state strings:&#13;&#10;&#13;&#10;en: English&#13;&#10;da: Danish&#13;&#10;If you would like to assist in translating to a new language, do the following:&#13;&#10;&#13;&#10;From the translations directory on this Github Project, download the file en.json&#13;&#10;Rename the file to YourLanguageCode.json - example for Spanish rename it to es.json&#13;&#10;Edit the file and translate the strings&#13;&#10;Make a pull request in Github and attach the file." Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="Config Directory" Target="/usr/local/config" Default="/mnt/user/appdata/weatherflow2mqtt" Mode="rw" Description="" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/weatherflow2mqtt</Config>
+  <Config Name="RAPID_WIND_INTERVAL" Target="RAPID_WIND_INTERVAL" Default="0" Mode="" Description=" The weather stations delivers wind speed and bearing every 2 seconds. If you don't want to update the HA sensors so often, you can set a number here (in seconds), for how often they are updated. Default is 0, which means data are updated when received from the station." Type="Variable" Display="advanced" Required="true" Mask="false">0</Config>
+  <Config Name="WF_HOST" Target="WF_HOST" Default="0.0.0.0" Mode="" Description="Unless you have a very special IP setup or the Weatherflow hub is on a different network, you should not change this. Default is 0.0.0.0" Type="Variable" Display="advanced" Required="true" Mask="false">0.0.0.0</Config>
+  <Config Name="WF_PORT" Target="WF_PORT" Default="50222" Mode="" Description="Weatherflow always broadcasts on port 50222/udp, so don't change this. Default is 50222" Type="Variable" Display="advanced-hide" Required="true" Mask="false">50222</Config>
+  <Config Name="MQTT_DEBUG" Target="MQTT_DEBUG" Default="False" Mode="" Description="Set this to True, to get some more mqtt debugging messages in the Container log file. Default value is False" Type="Variable" Display="advanced" Required="false" Mask="false">False</Config>
+  <Config Name="DEBUG" Target="DEBUG" Default="False" Mode="" Description=" Set this to True to enable more debug data in the Container Log. Default is False" Type="Variable" Display="advanced" Required="false" Mask="false">False</Config>
+</Container>
