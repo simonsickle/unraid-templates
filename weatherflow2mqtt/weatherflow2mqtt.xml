@@ -23,8 +23,6 @@ Please review Breaking Changes prior to updating your instance. Breaking changes
   <ExtraParams>--restart unless-stopped</ExtraParams>
   <PostArgs/>
   <CPUset/>
-  <DonateText>If you like my work please consider Donating.</DonateText>
-  <DonateLink>https://cash.app/$ssickle</DonateLink>
   <Requires>//mosquitto\\</Requires>
   <Config Name="Is Tempest" Target="TEMPEST_DEVICE" Default="True" Mode="" Description="" Type="Variable" Display="always" Required="false" Mask="false"/>
   <Config Name="Station ID" Target="STATION_ID" Default="" Mode="" Description="Enter your Station ID for your WeatherFlow Station. Default value is blank." Type="Variable" Display="always" Required="false" Mask="false"/>
