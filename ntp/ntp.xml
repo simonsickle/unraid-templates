@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>ntp</Name>
+  <Repository>cturra/ntp</Repository>
+  <Registry>https://hub.docker.com/r/cturra/ntp</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/cturra/docker-ntp/issues</Support>
+  <Project>https://github.com/cturra/docker-ntp</Project>
+  <Overview>This container runs chrony on Alpine Linux.&#xD;
+&#xD;
+chrony is a versatile implementation of the Network Time Protocol (NTP). It can synchronise the system clock with NTP servers, reference clocks
+(e.g. GPS receiver), and manual input using wristwatch and keyboard. It can also operate as an NTPv4 (RFC 5905) server and peer to provide a time
+service to other computers in the network.</Overview>
+  <Category>Network:Other</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/simonsickle/unraid-templates/main/ntp/ntp.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/simonsickle/unraid-templates/main/ntp/logo.png</Icon>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <Date>2022-07-25</Date>
+  <License>Apache 2.0</License>
+  <ExtraSearchTerms>chrony docker-ntp</ExtraSearchTerms>
+  <Requires/>
+  <Config Name="NTP Servers" Target="NTP_SERVERS" Default="time.nist.gov" Mode="" Description="A comma separated list of time servers (hostname or
+IP) to sync your container with." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="NTP Port" Target="123" Default="" Mode="udp" Description="NTP Port required for other devices to sync time" Type="Port"
+Display="always-hide" Required="false" Mask="false">123</Config>
+</Container>
