@@ -3,7 +3,7 @@
   <Name>ntp</Name>
   <Repository>cturra/ntp</Repository>
   <Registry>https://hub.docker.com/r/cturra/ntp</Registry>
-  <Network>bridge</Network>
+  <Network>host</Network>
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
@@ -27,6 +27,4 @@ service to other computers in the network.</Overview>
   <Requires/>
   <Config Name="NTP Servers" Target="NTP_SERVERS" Default="time.nist.gov" Mode="" Description="A comma separated list of time servers (hostname or
 IP) to sync your container with." Type="Variable" Display="always" Required="false" Mask="false"/>
-  <Config Name="NTP Port" Target="123" Default="" Mode="udp" Description="NTP Port required for other devices to sync time" Type="Port"
-Display="always-hide" Required="false" Mask="false">123</Config>
 </Container>
