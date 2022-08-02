@@ -7,7 +7,7 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support>https://github.com/briis/hass-weatherflow2mqtt/issues/</Support>
+  <Support>https://github.com/simonsickle/unraid-templates/discussions/categories/q-a-support</Support>
   <Project>https://github.com/briis/hass-weatherflow2mqtt</Project>
   <Overview>This project monitors the UDP socket (50222) from a WeatherFlow Hub, and publishes the data to a MQTT Server. Data is formatted in a way that, it supports the MQTT Discovery format for Home Assistant, so a sensor will created for each entity that WeatherFlow sends out, if you have MQTT Discovery enabled.&#xD;
 &#xD;
