@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Influxdb 1.8</Name>
+  <Repository>influxdb:1.8</Repository>
+  <Registry>https://hub.docker.com/_/influxdb/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/simonsickle/unraid-templates/discussions/categories/q-a-support</Support>
+  <Project>https://influxdata.com/</Project>
+  <Overview>InfluxDB is an open source time series database with no external dependencies. It's useful for recording metrics, events, and performing analytics.</Overview>
+  <Category>Network:Management Tools:Utilities</Category>
+  <WebUI>http://[IP]:[PORT:8083]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/simonsickle/unraid-templates/main/influxdb1/influxdb1.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/simonsickle/unraid-templates/main/influxdb1/logo.png</Icon>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <Date>2022-08-02</Date>
+  <Requires/>
+  <Config Name="HTTP WebUI" Target="8083" Default="8083" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">8083</Config>
+  <Config Name="HTTP API" Target="8086" Default="8086" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">8086</Config>
+  <Config Name="appdata" Target="/var/lib/influxdb" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/influxdb</Config>
+</Container>

@@ -7,7 +7,7 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support>https://github.com/cturra/docker-ntp/issues</Support>
+  <Support>https://github.com/simonsickle/unraid-templates/discussions/categories/q-a-support</Support>
   <Project>https://github.com/cturra/docker-ntp</Project>
   <Overview>This container runs chrony on Alpine Linux.&#xD;
 &#xD;
@@ -25,6 +25,5 @@ service to other computers in the network.</Overview>
   <License>Apache 2.0</License>
   <ExtraSearchTerms>chrony docker-ntp</ExtraSearchTerms>
   <Requires/>
-  <Config Name="NTP Servers" Target="NTP_SERVERS" Default="time.nist.gov" Mode="" Description="A comma separated list of time servers (hostname or
-IP) to sync your container with." Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="NTP Servers" Target="NTP_SERVERS" Default="time.nist.gov" Mode="" Description="A comma separated list of time servers (hostname or IP) to sync your container with." Type="Variable" Display="always" Required="false" Mask="false"/>
 </Container>

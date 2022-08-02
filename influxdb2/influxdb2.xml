@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>Influxdb2</Name>
+  <Repository>influxdb</Repository>
+  <Registry>https://hub.docker.com/_/influxdb/</Registry>
+  <Branch>
+    <Tag>2.3</Tag>
+    <TagDescription>2.3 and patches</TagDescription>
+  </Branch>
+  <Branch>
+    <Tag>2.2</Tag>
+    <TagDescription>2.2 and patches</TagDescription>
+  </Branch>
+  <Branch>
+    <Tag>2.1</Tag>
+    <TagDescription>2.1 and patches</TagDescription>
+  </Branch>
+  <Branch>
+    <Tag>latest</Tag>
+    <TagDescription>latest container, use with caution!</TagDescription>
+  </Branch>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/simonsickle/unraid-templates/discussions/categories/q-a-support</Support>
+  <Project>https://influxdata.com/</Project>
+  <Overview>InfluxDB is an open source time series database with no external dependencies. It's useful for recording metrics, events, and performing analytics.</Overview>
+  <Category>Network:Management Tools:Utilities</Category>
+  <WebUI>http://[IP]:[PORT:8086]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/simonsickle/unraid-templates/main/influxdb2/influxdb2.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/simonsickle/unraid-templates/main/influxdb2/logo.png</Icon>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <Date>2022-08-02</Date>
+  <Requires/>
+  <Config Name="WebUI / API" Target="8086" Default="8086" Mode="tcp" Description="" Type="Port" Display="always" Required="true" Mask="false">8086</Config>
+  <Config Name="appdata" Target="/var/lib/influxdb2" Default="" Mode="rw" Description="" Type="Path" Display="always" Required="true" Mask="false">/mnt/user/appdata/influxdb2</Config>
+</Container>
