@@ -7,7 +7,7 @@
   <MyIP/>
   <Shell>sh</Shell>
   <Privileged>false</Privileged>
-  <Support>https://github.com/adriankumpf/teslamate/issues</Support>
+  <Support>https://github.com/simonsickle/unraid-templates/discussions/categories/q-a-support</Support>
   <Project>https://github.com/adriankumpf/teslamate</Project>
   <Overview>TeslaMate is a powerful, self-hosted data logger for your Tesla. Postgres is required to save logged data.</Overview>
   <Category>Tools:</Category>
