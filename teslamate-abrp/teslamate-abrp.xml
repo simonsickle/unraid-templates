@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>TeslaMate-ABRP</Name>
+  <Repository>fetzu/teslamate-abrp:latest</Repository>
+  <Registry>https://hub.docker.com/r/fetzu/teslamate-abrp</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/simonsickle/unraid-templates/discussions/categories/q-a-support</Support>
+  <Project>https://github.com/fetzu/teslamate-abrp</Project>
+  <Overview>Sync TeslaMate data to A Better Route Planner to avoid issues with your Tesla sleeping</Overview>
+  <Category>Tools: Status:Stable</Category>
+  <WebUI/>
+  <TemplateURL>https://raw.githubusercontent.com/simonsickle/unraid-templates/main/teslamate-abrp/teslamate-abrp.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/simonsickle/unraid-templates/main/teslamate-abrp/logo.png</Icon>
+  <ExtraParams>--restart unless-stopped</ExtraParams>
+  <PostArgs/>
+  <CPUset/>
+  <Date>2022-08-07</Date>
+  <Requires>//teslamate\\ and //mosquitto\\</Requires>
+  <Config Name="MQTT Broker" Target="MQTT_SERVER" Default="" Mode="" Description="" Type="Variable" Display="always" Required="true" Mask="false"/>
+  <Config Name="MQTT Username" Target="MQTT_USERNAME" Default="" Mode="" Description="Username if you are running MQTT in secure mode. Empty is no user" Type="Variable" Display="always" Required="false" Mask="false"/>
+  <Config Name="MQTT Password" Target="MQTT_PASSWORD" Default="" Mode="" Description="MQTT password if running in secure mode. Empty if not" Type="Variable" Display="always" Required="false" Mask="true"/>
+  <Config Name="ABRP User Token" Target="USER_TOKEN" Default="" Mode="" Description="This is the token provided by ABRP" Type="Variable" Display="always" Required="true" Mask="true"/>
+  <Config Name="Car Number" Target="CAR_NUMBER" Default="1" Mode="" Description="This is your car number, if you only have one vehicle then this will be 1" Type="Variable" Display="always" Required="true" Mask="false"/>/
+  <Config Name="Car Model" Target="CAR_MODEL" Default="" Mode="" Description="Your car model. When this value is not set, the script will try to determine your car model automatically (this should work for Models S, X, 3 and Y with standard configs). The detection is very bare-bones and will not take into account factors such as wheel type, heat pump, LFP battery. It is recommended you take a moment to find your car model on https://api.iternio.com/1/tlm/get_carmodels_list and use the corresponding key as a value for CAR_MODEL (e.g. " Type="Variable" Display="always" Required="false" Mask="false"/>
+</Container>
