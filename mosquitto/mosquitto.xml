@@ -19,7 +19,7 @@
   <CPUset/>
   <Date>2022-09-04</Date>
   <Requires/>
-  <Config Name="MQTT Port" Target="" Default="1883" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false"/>
+  <Config Name="MQTT Port" Target="1883" Default="1883" Mode="tcp" Description="" Type="Port" Display="always" Required="false" Mask="false"/>
   <Config Name="config" Target="/mosquitto/config" Default="/mnt/user/appdata/mosquitto/config/" Mode="rw" Description="Store mosquitto.conf and passwd files" Type="Path" Display="advanced" Required="false" Mask="false"/>
   <Config Name="data" Target="/mosquitto/data" Default="/mnt/user/appdata/mosquitto/data" Mode="rw" Description=" Store persistent MQTT data. Note: Persistent data must be enabled in the mosquitto.conf config file. " Type="Path" Display="advanced" Required="false" Mask="false"/>
   <Config Name="logs" Target="/mosquitto/log" Default="/mnt/user/appdata/mosquitto/log" Mode="rw" Description="Store mosquitto logs.  Note: Logs must be enabled in the mosquitto.conf config file" Type="Path" Display="advanced" Required="false" Mask="false"/>
